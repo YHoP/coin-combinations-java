@@ -18,4 +18,25 @@ public void coinCounter_ReturnsNumberOfDimesForCoinAmount_string() {
     String answer = "Your change is 0 quarters, 1 dimes, 0 nickels and 0 pennies.";
     assertEquals(answer, testCoinCombo.coinCounter(10));
   }
+
+@Test
+  public void coinCounter_ReturnsNumberOfNickelForCoinAmount_string() {
+      CoinCombo testCoinCombo = new CoinCombo();
+      String answer = "Your change is 0 quarters, 0 dimes, 1 nickels and 0 pennies.";
+      assertEquals(answer, testCoinCombo.coinCounter(5));
+    }
+
+@Test
+  public void coinCounter_ReturnsNumberOfPennyForCoinAmount_string() {
+      CoinCombo testCoinCombo = new CoinCombo();
+      String answer = "Your change is 0 quarters, 0 dimes, 0 nickels and 3 pennies.";
+      assertEquals(answer, testCoinCombo.coinCounter(3));
+    }
+
+@Test
+  public void coinCounter_ReturnsNumberOfALLForCoinAmount_string() {
+      CoinCombo testCoinCombo = new CoinCombo();
+      String answer = "Your change is 3 quarters, 1 dimes, 1 nickels and 4 pennies.";
+      assertEquals(answer, testCoinCombo.coinCounter(94));
+    }
 }

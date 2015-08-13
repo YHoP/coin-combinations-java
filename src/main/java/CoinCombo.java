@@ -13,15 +13,28 @@ public class CoinCombo {
 
 
 public static String coinCounter(Integer amount) {
-  Integer coinCount = 85;
+  Integer coinCount = amount;
   Integer quarterCount = 0;
   Integer dimeCount = 0;
   Integer nickelCount = 0;
   Integer pennyCount = 0;
 
-  String answer =String.format("You have %d quarters", quarterCount);
-  //
-  // String answer = System.out.println("Your change for %d cents is %d quarters, %d dimes, %d nickels and $d pennies.", coinCount, quarterCount, dimeCount, nickelCount, pennyCount);
+  while (coinCount > 0){
+    if (coinCount >= 25){
+      coinCount -= 25;
+      quarterCount += 1;
+    }else if(coinCount >= 10){
+      coinCount -= 10;
+      dimeCount += 1;
+    }else
+    coinCount = 0;
+  }
+
+
+
+
+
+  String answer = String.format("Your change is %d quarters, %d dimes, %d nickels and %d pennies.", quarterCount, dimeCount, nickelCount, pennyCount);
   return answer;
     }
 }

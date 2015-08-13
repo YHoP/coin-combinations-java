@@ -39,4 +39,12 @@ public void coinCounter_ReturnsNumberOfDimesForCoinAmount_string() {
       String answer = "Your change is 3 quarters, 1 dimes, 1 nickels and 4 pennies.<br>";
       assertEquals(answer, testCoinCombo.coinCounter(94));
     }
+
+
+@Test
+  public void coinCounter_ReturnsNumberOfOutofQuartersForCoinAmount_string() {
+      CoinCombo testCoinCombo = new CoinCombo();
+      String answer = "We are out of quarters.<br>";
+      assertEquals(answer, testCoinCombo.outCoins(0, 1, 1));
+    }
 }

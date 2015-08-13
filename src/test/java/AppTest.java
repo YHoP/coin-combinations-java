@@ -22,11 +22,18 @@ public class AppTest extends FluentTest{
   }
 
   @Test
-  public void doesRockBeatPaper(){
+  public void whatsChanges(){
     goTo("http://localhost:4567/");
     fill("#amount").with("33");
     submit(".btn");
     assertThat(pageSource()).contains("Your change is 1 quarters, 0 dimes, 1 nickels and 3 pennies.");
   }
 
+  @Test
+  public void outOfCoins(){
+    goTo("http://localhost:4567/");
+    fill("#amount").with("234");
+    submit(".btn");
+    assertThat(pageSource()).contains("We are out of dimes.");
+  }
 }

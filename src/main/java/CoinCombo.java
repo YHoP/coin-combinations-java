@@ -72,9 +72,9 @@ public static String coinCounter(Integer amount) {
 
 public static String outCoins(Integer aQuarter, Integer aDime, Integer aNickel){
   String outPut ="";
-  if (aQuarter == 0) outPut += "We are out of quarters.\n";
-  if (aDime == 0) outPut += "We are out of dimes.\n";
-  if (aNickel == 0) outPut += "We are out of nickels.\n";
+  if (aQuarter == 0) outPut += "We are out of quarters.<br>";
+  if (aDime == 0) outPut += "We are out of dimes.<br>";
+  if (aNickel == 0) outPut += "We are out of nickels.<br>";
   return outPut;
 }
 

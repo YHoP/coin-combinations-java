@@ -39,25 +39,43 @@ public static String coinCounter(Integer amount) {
   Integer dimeCount = 0;
   Integer nickelCount = 0;
   Integer pennyCount = 0;
+  Integer aQuarter = 5;
+  Integer aDime = 10;
+  Integer aNickel = 3;
 
   // while loop for counting coins
   while (coinCount > 0){
-    if (coinCount >= 25){
+    if (coinCount >= 25 && aQuarter > 0){
       coinCount -= 25;
-      quarterCount += 1;
-    }else if(coinCount >= 10){
+      quarterCount++;
+      aQuarter--;
+    }
+    else if(coinCount >= 10 && aDime > 0){
       coinCount -= 10;
-      dimeCount += 1;
-    }else if(coinCount >= 5){
+      dimeCount++;
+      aDime--;
+    }else if(coinCount >= 5 && aNickel >0){
       coinCount -= 5;
-      nickelCount += 1;
+      nickelCount++;
+      aNickel--;
     }else if(coinCount >= 1){
-      coinCount -= 1;
-      pennyCount += 1;
+      coinCount--;
+      pennyCount++;
     }else
     coinCount = 0;
   }
-  String answer = String.format("Your change is %d quarters, %d dimes, %d nickels and %d pennies.", quarterCount, dimeCount, nickelCount, pennyCount);
+
+  String answer = String.format("Your change is %d quarters, %d dimes, %d nickels and %d pennies.<br>", quarterCount, dimeCount, nickelCount, pennyCount);
+  answer += outCoins(aQuarter, aDime, aNickel);
   return answer;
     }
+
+public static String outCoins(Integer aQuarter, Integer aDime, Integer aNickel){
+  String outPut ="";
+  if (aQuarter == 0) outPut += "We are out of quarters.\n";
+  if (aDime == 0) outPut += "We are out of dimes.\n";
+  if (aNickel == 0) outPut += "We are out of nickels.\n";
+  return outPut;
+}
+
 }

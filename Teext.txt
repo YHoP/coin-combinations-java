@@ -1,0 +1,9 @@
+Quarter = 25
+Dime = 10
+Nickel =5
+Penny = 1
+
+1. If user input 25, it will return a quarter
+2. If user input 10, it will return a dime
+3. If user input 5, it will return a nickel
+4. If user input 1, it will return a penny
